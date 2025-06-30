@@ -51,7 +51,7 @@ npx expo start
 ---
 
 ## 📦 Dependencies
-
+```
  "dependencies": {
     "@expo/metro-runtime": "~5.0.4",
     "@react-navigation/native": "^7.1.14",
@@ -69,5 +69,10 @@ npx expo start
     "react-native-web": "^0.20.0",
     "tailwindcss": "^3.3.2"
   },
-
+```
   ---
+
+  ## ☕️ Buy A Coffee
+  Feel free to fork, explore, or build upon this for your own learning. Enjoyed this? A little coffee goes a long way ☕😊 https://buymeacoffee.com/han.is.creator
+
+  
