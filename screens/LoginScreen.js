@@ -1,5 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
+
+import { ref, get } from "firebase/database";
+import { database } from "../firebaseConfig";
+import { Alert } from "react-native";
+import { useState } from 'react';
+
 import {
   View,
   Text,
@@ -19,7 +25,34 @@ import Animated,{
 
 export default function LoginScreen() {
 
-    const navigation = useNavigation();
+  const navigation = useNavigation();
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+
+  const loginUser = async (username, password) => {
+    try {
+        const userRef = ref(database, `users/${username}`);
+        const snapshot = await get(userRef);
+
+        if (snapshot.exists()) {
+        const user = snapshot.val();
+        if (user.password === password) {
+            Alert.alert("Login Success", `Welcome, ${user.username}!`);
+        } else {
+            Alert.alert("Login Failed", "Incorrect password");
+        }
+        } else {
+        Alert.alert("Login Failed", "User not found");
+        }
+    } catch (error) {
+        console.error(error);
+        Alert.alert("Error", "Login error");
+    }
+    };
+
+
 
   return (
     <View style={styles.container}>
@@ -55,15 +88,15 @@ export default function LoginScreen() {
         {/* form */}
         <View className="items-center mx-4  mt-[150px]">
             <Animated.View entering={FadeInDown.duration(1000).springify()} className="bg-black/5 p-5 rounded-2xl w-full">
-                <TextInput placeholder='Email' placeholderTextColor={'gray'} />
+                <TextInput placeholder='Username' placeholderTextColor={'gray'} value={username} onChangeText={setUsername} />
             </Animated.View>
 
             <Animated.View entering={FadeInDown.delay(200).duration(1000).springify()} className="bg-black/5 p-5 rounded-2xl w-full mt-4">
-                <TextInput placeholder='Password' placeholderTextColor={'gray'} secureTextEntry />
+                <TextInput placeholder='Password' placeholderTextColor={'gray'} value={password} onChangeText={setPassword} secureTextEntry />
             </Animated.View>
 
             <Animated.View entering={FadeInDown.delay(400).duration(1000).springify()} className="w-full">
-                <TouchableOpacity className="w-full bg-sky-400 p-3 rounded-2xl mt-8">
+                <TouchableOpacity className="w-full bg-sky-400 p-3 rounded-2xl mt-8" onPress={() => loginUser(username, password)} >
                     <Text className="text-lg font-bold text-white text-center">Login</Text>
                 </TouchableOpacity>
             </Animated.View>
