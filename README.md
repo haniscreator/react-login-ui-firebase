@@ -12,8 +12,9 @@ A beautiful login screen built with **React Native**, **Expo**, and **NativeWind
 
 ## 📱 Screenshots
 
-![Login Screen Preview](assets/images/Login.png) 
-![Signup Screen Preview](assets/images/Signup.png) 
+| Login | Sign Up |
+|--------------|----------------|
+| ![Login Screen Preview](assets/images/Login.png)  | ![Signup Screen Preview](assets/images/Signup.png)  |
 
 ---
 
