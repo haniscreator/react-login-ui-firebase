@@ -1,20 +1,73 @@
-# Reanimated example
+# Login UI & Firebase App
 
-<p>
-  <!-- iOS -->
-  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  <!-- Android -->
-  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  <!-- Web -->
-</p>
+A beautiful login screen built with **React Native**, **Expo**, and **NativeWind** (Tailwind CSS for React Native). 
 
-## 🚀 How to use
+- Full-screen background image
+- Overlay decorative images
+- Styled "Login" heading
+- Input field with modern UI design
+- Mobile-first layout and responsive spacing
 
-> `npx create-expo my-app --example with-reanimated`
+---
 
-- Run `yarn` or `npm install`
-- Run `yarn start` or `npm run start` to try it out.
+## 📱 Screenshots
 
-## 📝 Notes
+![Login Screen Preview](./assets/images/login.png) 
+![Signup Screen Preview](./assets/images/signup.png) 
 
-- [`react-native-reanimated` docs](https://docs.swmansion.com/react-native-reanimated/)
+---
+
+## 🚀 Features
+
+- Expo + React Native setup
+- NativeWind (Tailwind CSS) styling
+- Full-screen background image
+- Image overlay using `Image`
+- Custom `TextInput` components
+- Ready for login logic integration
+- Animations with `react-native-reanimated`
+
+---
+
+## 🛠️ Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/haniscreator/react-login-ui-firebase.git
+cd react-login-ui-firebase
+```
+
+### 2. Install dependencies
+```
+npm install
+```
+
+### 3. Run the app
+```
+npx expo start
+```
+
+---
+
+## 📦 Dependencies
+
+ "dependencies": {
+    "@expo/metro-runtime": "~5.0.4",
+    "@react-navigation/native": "^7.1.14",
+    "@react-navigation/native-stack": "^7.3.21",
+    "expo": "^53.0.4",
+    "expo-status-bar": "~2.2.3",
+    "nativewind": "^2.0.11",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-native": "0.79.1",
+    "react-native-gesture-handler": "~2.24.0",
+    "react-native-reanimated": "~3.17.4",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-screens": "~4.11.1",
+    "react-native-web": "^0.20.0",
+    "tailwindcss": "^3.3.2"
+  },
+
+  ---
