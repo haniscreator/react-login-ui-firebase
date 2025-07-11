@@ -38,3 +38,5 @@ expo-debug.log
 *.lock
 package-lock.json
 .pnpm-debug.log
+
+config_credentials.txt
